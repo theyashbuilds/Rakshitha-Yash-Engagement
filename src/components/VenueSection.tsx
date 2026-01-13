@@ -10,7 +10,7 @@ const VenueSection = () => {
 
   const venueAddress = "Nammoora Tindi Banquet Hall";
   const fullAddress = "Nammoora Tindi Banquet Hall, Bangalore, Karnataka, India";
-  const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
+  const mapsUrl = "https://maps.app.goo.gl/Am8EKgeH2QfN52BK9";
 
   return (
     <section ref={ref} className="relative py-12 md:py-24 px-4 overflow-hidden section-padding">

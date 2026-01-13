@@ -89,11 +89,11 @@ const HeroSection = () => {
           transition={{ duration: 1, delay: 1.2 }}
           className="mb-8"
         >
-          <p className="font-body text-sm md:text-base text-muted-foreground uppercase tracking-wider">
-            cordially invite you to the Engagement
+          <p className="font-traditional text-lg md:text-xl text-gold italic mt-1">
+            Cordially invite you to the Engagement
           </p>
           <p className="font-traditional text-lg md:text-xl text-gold italic mt-1">
-            ceremony of our Son
+            Ceremony of our Son
           </p>
         </motion.div>
 
@@ -163,7 +163,7 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          at our Engagement Ceremony
+          for their joyous commitment.
         </motion.p>
 
       </motion.div>

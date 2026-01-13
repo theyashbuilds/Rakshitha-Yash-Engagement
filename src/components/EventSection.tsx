@@ -24,7 +24,7 @@ const EventSection = () => {
       icon: Clock,
       label: "Time",
       value: "11:00 AM onwards",
-      subtext: "Lucky moment"
+      subtext: "Blessed hour"
     }
   ];
 

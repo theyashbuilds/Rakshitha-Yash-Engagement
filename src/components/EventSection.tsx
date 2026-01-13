@@ -115,7 +115,7 @@ const EventSection = () => {
           className="mt-12 text-center"
         >
           <p className="font-traditional text-lg text-foreground/70 italic">
-            "Two souls with but a single thought, two hearts that beat as one"
+            "A journey of roads and melodies, united by love."
           </p>
         </motion.div>
       </div>

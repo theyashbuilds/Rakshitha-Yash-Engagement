@@ -13,7 +13,7 @@ const VenueSection = () => {
   const mapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(fullAddress)}`;
 
   return (
-    <section ref={ref} className="relative py-20 md:py-32 px-4 overflow-hidden">
+    <section ref={ref} className="relative py-12 md:py-24 px-4 overflow-hidden section-padding">
       {/* Background */}
       <div className="absolute inset-0 bg-secondary/40" />
       <div className="absolute inset-0 paper-texture pointer-events-none" />
@@ -39,11 +39,11 @@ const VenueSection = () => {
           <LotusDecor className="w-28 md:w-36 mx-auto" />
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-12">
+        <div className="grid grid-cols-1 gap-8 md:gap-12">
           {/* Venue details */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
             <div className="bg-card/50 backdrop-blur-sm gold-border rounded-lg p-6 md:p-8 h-full">
@@ -65,47 +65,57 @@ const VenueSection = () => {
               {/* Divider */}
               <div className="w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent my-6" />
 
-              {/* Contact */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="w-10 h-10 rounded-full bg-gold/10 flex items-center justify-center shrink-0">
-                  <Phone className="w-4 h-4 text-gold" />
-                </div>
-                <p className="font-body text-foreground/80">
+              {/* Contact Button */}
+              <div className="flex flex-col items-center gap-4 mb-8">
+                <p className="font-body text-foreground/80 mb-2">
                   For inquiries, contact the family
                 </p>
+                <motion.a
+                  href="tel:9632073835"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-secondary text-foreground font-body font-medium gold-border hover:bg-secondary/80 transition-all duration-300 w-full justify-center md:w-auto"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Phone className="w-5 h-5 text-gold" />
+                  Call Family
+                </motion.a>
               </div>
 
-              {/* Directions button */}
-              <motion.a
-                href={mapsUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-3 px-6 py-3 rounded-full bg-gold text-background font-body font-medium hover:bg-gold-dark transition-colors duration-300 group"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <Navigation className="w-4 h-4 group-hover:rotate-45 transition-transform duration-300" />
-                Get Directions
-              </motion.a>
+              <div className="flex justify-center mb-8">
+                <motion.a
+                  href={mapsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-gold text-background font-body font-medium hover:bg-gold-dark transition-all duration-300 group w-full justify-center md:w-auto shadow-gold"
+                  whileHover={{ scale: 1.02 }}
+                  whileTap={{ scale: 0.98 }}
+                >
+                  <Navigation className="w-5 h-5 group-hover:rotate-45 transition-transform duration-300" />
+                  Get Directions
+                </motion.a>
+              </div>
 
-              {/* QR Code */}
+              {/* QR Code Section */}
               <motion.div
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isInView ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6, delay: 0.5 }}
-                className="mt-8 p-4 bg-background rounded-lg inline-block"
+                className="mt-8 text-center"
               >
-                <p className="font-body text-sm text-muted-foreground mb-3 text-center">
+                <p className="font-body text-sm text-muted-foreground mb-4">
                   Scan for directions
                 </p>
-                <div className="p-3 bg-white rounded-lg">
-                  <QRCodeSVG
-                    value={mapsUrl}
-                    size={120}
-                    level="M"
-                    fgColor="#1a1a1a"
-                    bgColor="#ffffff"
+                <div className="relative inline-block p-2 bg-white rounded-xl shadow-lg border-4 border-gold/20 overflow-hidden">
+                  <img
+                    src="/QRCODE.jpg"
+                    alt="Location QR Code"
+                    className="w-32 h-32 md:w-40 md:h-40 object-cover"
                   />
+                  {/* Decorative corners for QR */}
+                  <div className="absolute top-0 left-0 w-4 h-4 border-l-2 border-t-2 border-gold" />
+                  <div className="absolute top-0 right-0 w-4 h-4 border-r-2 border-t-2 border-gold" />
+                  <div className="absolute bottom-0 left-0 w-4 h-4 border-l-2 border-b-2 border-gold" />
+                  <div className="absolute bottom-0 right-0 w-4 h-4 border-r-2 border-b-2 border-gold" />
                 </div>
               </motion.div>
             </div>
@@ -113,12 +123,12 @@ const VenueSection = () => {
 
           {/* Map embed */}
           <motion.div
-            initial={{ opacity: 0, x: 40 }}
-            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            initial={{ opacity: 0, y: 40 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
             className="relative"
           >
-            <div className="relative bg-card/50 gold-border rounded-lg overflow-hidden aspect-square md:aspect-auto md:h-full min-h-[350px]">
+            <div className="relative bg-card/50 gold-border rounded-lg overflow-hidden aspect-video md:h-[450px]">
               {/* Map iframe */}
               <iframe
                 src={`https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8&q=${encodeURIComponent(fullAddress)}&zoom=15`}

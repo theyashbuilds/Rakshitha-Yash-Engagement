@@ -1,21 +1,21 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { Heart } from 'lucide-react';
-import { OmSymbol, LotusDecor, MusicWave } from './SacredSymbols';
+import { LotusDecor, MusicWave } from './SacredSymbols';
 
 const FooterSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
 
   return (
-    <footer ref={ref} className="relative py-16 md:py-24 px-4 overflow-hidden">
+    <footer ref={ref} className="relative py-12 md:py-20 px-4 overflow-hidden section-padding">
       {/* Background */}
       <div className="absolute inset-0 bg-background" />
       <div className="absolute inset-0 bg-[image:var(--gradient-radial-gold)] opacity-30" />
       <div className="absolute inset-0 paper-texture pointer-events-none" />
 
       {/* Music wave at top */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 right-0"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 0.15 } : {}}
@@ -25,15 +25,6 @@ const FooterSection = () => {
       </motion.div>
 
       <div className="container relative z-10 max-w-3xl mx-auto text-center">
-        {/* Om symbol */}
-        <motion.div
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={isInView ? { opacity: 1, scale: 1 } : {}}
-          transition={{ duration: 0.8 }}
-          className="mb-8"
-        >
-          <OmSymbol className="w-12 h-12 md:w-16 md:h-16 mx-auto sacred-glow" />
-        </motion.div>
 
         {/* Main text */}
         <motion.div
@@ -44,7 +35,7 @@ const FooterSection = () => {
           <h3 className="font-display text-2xl md:text-3xl lg:text-4xl text-foreground mb-4">
             We look forward to celebrating with you
           </h3>
-          
+
           <LotusDecor className="w-24 md:w-32 mx-auto mb-6" />
 
           <p className="font-traditional text-lg md:text-xl text-foreground/70 italic mb-8">

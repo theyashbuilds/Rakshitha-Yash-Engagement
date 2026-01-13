@@ -24,19 +24,19 @@ const EventSection = () => {
       icon: Clock,
       label: "Time",
       value: "11:00 AM onwards",
-      subtext: "Muhurat Time"
+      subtext: "Lucky moment"
     }
   ];
 
   return (
-    <section ref={ref} className="relative py-20 md:py-32 px-4 overflow-hidden">
+    <section ref={ref} className="relative py-12 md:py-24 px-4 overflow-hidden section-padding">
       {/* Background */}
       <div className="absolute inset-0 bg-background" />
       <div className="absolute inset-0 compass-lines pointer-events-none" />
       <div className="absolute inset-0 bg-[image:var(--gradient-radial-gold)] opacity-50" />
 
       {/* Music wave decoration */}
-      <motion.div 
+      <motion.div
         className="absolute top-20 left-0 right-0"
         initial={{ opacity: 0 }}
         animate={isInView ? { opacity: 0.2 } : {}}

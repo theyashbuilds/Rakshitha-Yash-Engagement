@@ -1,13 +1,12 @@
 import { motion } from 'framer-motion';
 import HeroSection from '@/components/HeroSection';
-import FamilySection from '@/components/FamilySection';
 import EventSection from '@/components/EventSection';
 import VenueSection from '@/components/VenueSection';
 import FooterSection from '@/components/FooterSection';
 
 const Index = () => {
   return (
-    <motion.main 
+    <motion.main
       className="relative overflow-hidden"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
@@ -20,7 +19,6 @@ const Index = () => {
       </header>
 
       <HeroSection />
-      <FamilySection />
       <EventSection />
       <VenueSection />
       <FooterSection />

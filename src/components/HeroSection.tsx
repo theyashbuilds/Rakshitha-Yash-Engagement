@@ -1,6 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useRef } from 'react';
-import { OmSymbol, SwastikSymbol, LotusDecor, FloralCorner, MusicWave, CompassRose } from './SacredSymbols';
+import { LotusDecor, FloralCorner, MusicWave, CompassRose } from './SacredSymbols';
 
 const HeroSection = () => {
   const ref = useRef<HTMLDivElement>(null);
@@ -13,14 +13,14 @@ const HeroSection = () => {
   const opacity = useTransform(scrollYProgress, [0, 0.5], [1, 0]);
 
   return (
-    <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section ref={ref} className="relative flex items-center justify-center overflow-hidden py-12 md:py-20">
       {/* Background layers */}
       <div className="absolute inset-0 bg-[image:var(--gradient-hero)]" />
       <div className="absolute inset-0 paper-texture pointer-events-none" />
       <div className="absolute inset-0 mandala-pattern pointer-events-none" />
-      
+
       {/* Radial gold glow */}
-      <motion.div 
+      <motion.div
         className="absolute inset-0 bg-[image:var(--gradient-radial-gold)]"
         style={{ opacity }}
       />
@@ -35,7 +35,7 @@ const HeroSection = () => {
       <CompassRose className="absolute bottom-20 right-10 w-32 md:w-48 opacity-10" />
 
       {/* Music wave pattern (Rakshitha's element) */}
-      <motion.div 
+      <motion.div
         className="absolute top-1/4 left-0 right-0"
         style={{ y }}
       >
@@ -43,27 +43,16 @@ const HeroSection = () => {
       </motion.div>
 
       {/* Main content */}
-      <motion.div 
+      <motion.div
         className="relative z-10 text-center px-4 max-w-4xl mx-auto"
         style={{ y, opacity }}
       >
-        {/* Sacred symbols */}
-        <motion.div 
-          className="flex items-center justify-center gap-8 md:gap-12 mb-6"
-          initial={{ opacity: 0, y: -30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 1, delay: 0.3 }}
-        >
-          <SwastikSymbol className="w-10 h-10 md:w-14 md:h-14 sacred-glow" />
-          <OmSymbol className="w-12 h-12 md:w-16 md:h-16 sacred-glow" />
-          <SwastikSymbol className="w-10 h-10 md:w-14 md:h-14 sacred-glow" />
-        </motion.div>
 
         {/* Divine blessings */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1.2, delay: 0.6 }}
+          transition={{ duration: 1.2, delay: 0.3 }}
           className="mb-8"
         >
           <p className="font-traditional text-lg md:text-xl text-gold tracking-[0.3em] uppercase">
@@ -71,50 +60,99 @@ const HeroSection = () => {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mt-3">
             <span className="font-traditional text-sm md:text-base text-muted-foreground italic">
-              Sitha Rama
+              || Sita Ramam ||
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-gold/40" />
             <span className="font-traditional text-sm md:text-base text-muted-foreground italic">
-              Lord Hanuman
+              || Lord Hanuman ||
             </span>
           </div>
         </motion.div>
 
-        {/* Couple names reveal */}
+        {/* Groom's Parents */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="mb-6"
+        >
+          <p className="font-traditional text-xl md:text-2xl text-foreground/90 leading-relaxed">
+            Smt. Gayathri M<br />
+            & Sri. Ramesh H B
+          </p>
+        </motion.div>
+
+        {/* Invitation Text */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1.2 }}
+          className="mb-8"
+        >
+          <p className="font-body text-sm md:text-base text-muted-foreground uppercase tracking-wider">
+            cordially invite you to the Engagement
+          </p>
+          <p className="font-traditional text-lg md:text-xl text-gold italic mt-1">
+            ceremony of our Son
+          </p>
+        </motion.div>
+
+        {/* Yash Names reveal */}
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.5, delay: 1 }}
+          transition={{ duration: 1.5, delay: 1.5 }}
+          className="mb-4"
+        >
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight">
+            <span className="text-gradient-gold block">Yash</span>
+          </h1>
+        </motion.div>
+
+        {/* & symbol */}
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.8, delay: 2.2 }}
+          className="text-gold font-display text-4xl md:text-5xl mb-4"
+        >
+          &
+        </motion.div>
+
+        {/* Rakshitha Names reveal */}
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 1.5, delay: 2.5 }}
           className="mb-6"
         >
-          <motion.h1 
-            className="font-display text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight"
-            initial={{ opacity: 0, y: 40, filter: "blur(20px)" }}
-            animate={{ opacity: 1, y: 0, filter: "blur(0px)" }}
-            transition={{ duration: 1.8, delay: 1.2, ease: [0.25, 0.46, 0.45, 0.94] }}
-          >
-            <span className="text-gradient-gold">Yash</span>
-            <motion.span 
-              className="inline-block mx-3 md:mx-6 text-gold"
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 0.8, delay: 2 }}
-            >
-              &
-            </motion.span>
-            <span className="text-gradient-gold">Rakshitha</span>
-          </motion.h1>
+          <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-medium tracking-tight">
+            <span className="text-gradient-gold block">Rakshitha</span>
+          </h1>
+        </motion.div>
+
+        {/* Bride's Parents detail */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 1, delay: 3.2 }}
+          className="mb-10"
+        >
+          <p className="font-traditional text-lg md:text-xl text-foreground/90 leading-tight">
+            D/o Smt. Mamatha &<br />
+            Sri. Anand Madalagere
+          </p>
         </motion.div>
 
         {/* Lotus decoration */}
         <LotusDecor className="w-32 md:w-40 mx-auto mb-8" />
 
-        {/* Invitation text */}
+        {/* Closing text */}
         <motion.p
           className="font-traditional text-lg md:text-xl text-foreground/80 italic"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 2.2 }}
+          transition={{ duration: 1, delay: 3.8 }}
         >
           Request the honour of your presence
         </motion.p>
@@ -125,24 +163,9 @@ const HeroSection = () => {
           animate={{ opacity: 1 }}
           transition={{ duration: 1, delay: 2.5 }}
         >
-          at their Engagement Ceremony
+          at our Engagement Ceremony
         </motion.p>
 
-        {/* Scroll indicator */}
-        <motion.div
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ duration: 1, delay: 3 }}
-        >
-          <motion.div
-            className="w-6 h-10 border-2 border-gold/40 rounded-full flex justify-center pt-2"
-            animate={{ y: [0, 8, 0] }}
-            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-          >
-            <motion.div className="w-1.5 h-3 bg-gold/60 rounded-full" />
-          </motion.div>
-        </motion.div>
       </motion.div>
     </section>
   );

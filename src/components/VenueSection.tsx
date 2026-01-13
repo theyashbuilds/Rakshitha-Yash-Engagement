@@ -71,13 +71,13 @@ const VenueSection = () => {
                   For inquiries, contact the family
                 </p>
                 <motion.a
-                  href="tel:9632073835"
+                  href="tel:7204735566"
                   className="inline-flex items-center gap-3 px-8 py-4 rounded-full bg-secondary text-foreground font-body font-medium gold-border hover:bg-secondary/80 transition-all duration-300 w-full justify-center md:w-auto"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                 >
                   <Phone className="w-5 h-5 text-gold" />
-                  Call Family
+                  Call Akash Gowda
                 </motion.a>
               </div>
 

@@ -255,10 +255,10 @@ export const guest = (() => {
         const url = new URL('https://calendar.google.com/calendar/render');
         const data = new URLSearchParams({
             action: 'TEMPLATE',
-            text: 'The Wedding of Wahyu and Riski',
-            dates: `${formatDate('2023-03-15 10:00')}/${formatDate('2023-03-15 11:00')}`,
-            details: 'Tanpa mengurangi rasa hormat, kami mengundang Anda untuk berkenan menghadiri acara pernikahan kami. Terima kasih atas perhatian dan doa restu Anda, yang menjadi kebahagiaan serta kehormatan besar bagi kami.',
-            location: 'RT 10 RW 02, Desa Pajerukan, Kec. Kalibagor, Kab. Banyumas, Jawa Tengah 53191.',
+            text: 'The Wedding of Yash and Rakshitha',
+            dates: `${formatDate('2026-05-04 09:15')}/${formatDate('2026-05-04 10:00')}`,
+            details: 'With great joy and blessings, we invite you to celebrate the wedding of Yash and Rakshitha. Muhurtham: 09:15 AM – 10:00 AM. Reception: Sunday, 03 May 2026 at 07:00 PM onwards. Venue: Sri Nandana Convention & Banquet, Bengaluru.',
+            location: 'Sri Nandana Convention & Banquet, No. 18/43/6, Gnana Jyothi Nagar, Ullal Main Road, Bengaluru – 560056',
             ctz: config.get('tz'),
         });
 
